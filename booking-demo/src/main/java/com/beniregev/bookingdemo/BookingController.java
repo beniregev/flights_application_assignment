@@ -61,9 +61,4 @@ public class BookingController {
         return (bookingTicketsService.isBaggageExist(baggageId));
     }
 
-    @RequestMapping(value = "/affordable/{price}", method = RequestMethod.GET)
-    public List<HotelBooking> getAffordable(@PathVariable double price) {
-        return bookings.stream().filter(x -> x.getPricePerNight() <= price )
-                .collect(Collectors.toList());
-    }
 }
